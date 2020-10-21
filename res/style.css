@@ -342,39 +342,39 @@ Collaboration
 td[new="1"] {
     border: 1px solid #666;
     outline: 0px;
-    background-color: blue;
+    background-color: #1F77B4;
 }
 td[extension="1"] {
     border: 1px solid #666;
     outline: 0px;
-    background-color: red;
+    background-color: #D62728;
 }
 td[challenge="1"] {
     border: 1px solid #666;
     outline: 0px;
-    background-color: orange;
+    background-color: #FF7F0E;
 }
 td[agree="1"] {
     border: 1px solid #666;
     outline: 0px;
-    background-color: green;
+    background-color: #2CA02C;
 }
 /*Argument Moves
 */
 td[claim="1"] {
     border: 1px solid #666;
     outline: 0px;
-    background-color: blue;
+    background-color: #1F77B4;
 }
 td[explanation="1"] {
     border: 1px solid #666;
     outline: 0px;
-    background-color: orange;
+    background-color: #FF7F0E;
 }
 td[evidence="1"] {
     border: 1px solid #666;
     outline: 0px;
-    background-color: green;
+    background-color: #2CA02C;
 }
 /*
 Specificity
@@ -382,17 +382,17 @@ Specificity
 td[low="1"] {
     border: 1px solid #666;
     outline: 0px;
-    background-color: blue;
+    background-color: #1F77B4;
 }
 td[high="1"] {
     border: 1px solid #666;
     outline: 0px;
-    background-color: green;
+    background-color: #2CA02C;
 }
 td[med="1"] {
     border: 1px solid #666;
     outline: 0px;
-    background-color: orange;
+    background-color: #FF7F0E;
 }
 th {
     border: 1px solid white;

@@ -110,7 +110,9 @@ class DiscussionHistory():
 
         indices = np.arange(self.userProfile.date-1, max(-1, self.userProfile.date-6), -1)
         for x in indices:
-            argY.insert(0, [self.userProfile.data[x]['graphData']['argMoveCount'][k] for k in argLabels])
+            arr = np.array([self.userProfile.data[x]['graphData']['argMoveCount'][k] for k in argLabels])
+            arr = arr/sum(arr)
+            argY.insert(0, arr)
             argY_labels.insert(0, "Discussion %d" %(x+1))
         argPlot = self.create_graph_object(argY, argLabels, argY_labels)
         graphics.append(argPlot, 'pos00')
@@ -121,7 +123,9 @@ class DiscussionHistory():
 
         indices = np.arange(self.userProfile.date-1, max(-1, self.userProfile.date-6), -1)
         for x in indices:
-            specY.insert(0, [self.userProfile.data[x]['graphData']['specifiCount'][k] for k in specLabels])
+            arr = np.array([self.userProfile.data[x]['graphData']['specifiCount'][k] for k in specLabels])
+            arr = arr/sum(arr)
+            specY.insert(0, arr)
             specY_labels.insert(0, "Discussion %d" %(x+1))
         specPlot = self.create_graph_object(specY, specLabels, specY_labels)
         graphics.append(specPlot, 'pos01')
@@ -132,7 +136,9 @@ class DiscussionHistory():
 
         indices = np.arange(self.userProfile.date-1, max(-1, self.userProfile.date-6), -1)
         for x in indices:
-            colY.insert(0, [self.userProfile.data[x]['graphData']['collabCount'][k] for k in colLabels])
+            arr = np.array([self.userProfile.data[x]['graphData']['collabCount'][k] for k in colLabels])
+            arr = arr/sum(arr)
+            colY.insert(0, arr)
             colY_labels.insert(0, "Discussion %d" %(x+1))
         colPlot = self.create_graph_object(colY, colLabels, colY_labels)
         graphics.append(colPlot, 'pos02')
@@ -166,6 +172,7 @@ class DiscussionHistory():
 
         plot.ax.set_xticks(x)
         plot.ax.set_xticklabels(labels)
+        plot.ax.set_ylim(0,1)
         plot.ax.legend()
         plot.redraw()
 

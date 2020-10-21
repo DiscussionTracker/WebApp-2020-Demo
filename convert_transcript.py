@@ -237,7 +237,7 @@ def gen_stats(transcriptDict, fName, teacherInfo, discussionInfo):
     retval['NumTurns'] = len(transcriptDict['turnList'])
     retval['Date'] = dRow['Date'].values[0]
     retval['Teacher'] = tRow['Teacher Name'].values[0]
-    retval['NumStudents'] = dRow['Number Students Present'].values[0]
+    retval['NumStudents'] = int(dRow['Number Students Present'].values[0])
     retval['Topic'] = dRow['Topic'].values[0]
     
     turnCounts = Counter( [turn['Student'] for turn in transcriptDict['turnList']] )
@@ -407,6 +407,9 @@ def batchProcessTranscripts(basepath, metadaPath, useClassifier=False):
         #print(json.dumps({x:data[x] for x in data if x != 'turnList'}, indent=2))
 
         # save the processed data raw
+        print(data)
+        for k in data:
+            print(k, type(data[k]))
         json.dump(data, open( os.path.join(basepath, split[0], ".".join(split[:-1]+["json"])), 'w', encoding="utf-8"))
 
         #process the transcript with classifier if desired
