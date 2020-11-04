@@ -11,4 +11,4 @@ to install the other external files look into requirements-external.txt and inst
 
 To run the system all you need to do is `python main.py dev` there is a production option that binds to port 80 but for local usage that is not necessary.
 
-To log in, the username is demo password is dtapp_demo_password
+To log in, the username is `demo` and password is `dtapp_demo_password`
